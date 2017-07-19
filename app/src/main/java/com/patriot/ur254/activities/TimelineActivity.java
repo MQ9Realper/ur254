@@ -10,19 +10,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.patriot.ur254.R;
 import com.patriot.ur254.utils.UniversalUtils;
 
 public class TimelineActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
     private UniversalUtils universalUtils;
+    private NavigationView navigationView;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
         universalUtils = new UniversalUtils(this);
+        firebaseAuth = FirebaseAuth.getInstance();
         InitToolbar();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -31,8 +37,10 @@ public class TimelineActivity extends AppCompatActivity implements NavigationVie
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        InitLogoutView();
     }
 
     private void InitToolbar() {
@@ -98,5 +106,16 @@ public class TimelineActivity extends AppCompatActivity implements NavigationVie
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void InitLogoutView() {
+        RelativeLayout layoutLogout = (RelativeLayout) navigationView.findViewById(R.id.layoutButtonLogout);
+        layoutLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                universalUtils.ShowLogoutConfirmation("Are you sure you want to logout?");
+            }
+        });
+
     }
 }
