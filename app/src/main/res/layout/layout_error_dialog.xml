@@ -19,30 +19,40 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="36dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/error" />
+            android:src="@drawable/error"
+            android:visibility="gone" />
 
-        <com.patriot.ur254.views.Txt
-            android:id="@+id/textViewProgressText"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/layoutHeading"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageViewError"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="26dp"
-            android:text="ERROR"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:background="@color/colorPrimary">
+
+            <com.patriot.ur254.views.Txt
+                android:id="@+id/textViewProgressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="26dp"
+                android:padding="10dp"
+                android:text="ERROR"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
 
         <com.patriot.ur254.views.Txt
             android:id="@+id/textViewErrorMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewProgressText"
+            android:layout_below="@+id/layoutHeading"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
             android:text="message"
             android:textColor="@android:color/black"
             android:textSize="14sp"
