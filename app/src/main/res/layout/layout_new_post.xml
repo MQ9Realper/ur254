@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layoutUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_buttons_background"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <com.patriot.ur254.views.Txt
+            android:id="@+id/textViewNewPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="16dp"
+            android:text="Write Post"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <com.patriot.ur254.views.Edt
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="What's on your mind?"
+        android:padding="16dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <com.patriot.ur254.views.Txt
+            android:id="@+id/textViewCancelNewPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/drawable_buttons_background"
+            android:padding="16dp"
+            android:text="Cancel"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0.7dp"
+            android:layout_height="60dp"
+            android:layout_toEndOf="@+id/textViewCancelNewPost"
+            android:layout_toRightOf="@+id/textViewCancelNewPost"
+            android:background="@android:color/white" />
+
+        <View
+            android:layout_width="0.7dp"
+            android:layout_height="60dp"
+            android:layout_toLeftOf="@+id/textViewPostNewPost"
+            android:layout_toStartOf="@+id/textViewPostNewPost"
+            android:background="@android:color/white" />
+
+        <com.patriot.ur254.views.Txt
+            android:id="@+id/textViewPostNewPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/drawable_buttons_background"
+            android:padding="16dp"
+            android:text="Post"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</LinearLayout>

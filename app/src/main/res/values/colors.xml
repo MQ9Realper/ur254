@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#de182f</color>
+    <color name="colorPrimaryDark">#c21729</color>
+    <color name="colorAccent">#fec707</color>
+    <color name="jubileeYellow">#fec707</color>
+    <color name="jubileePrimaryColor">#de182f</color>
+    <color name="jubileePrimaryDark">#c21729</color>
+    <color name="jubileeGreen">#11793A</color>
+    <color name="colorPressed">#f17b89</color>
+</resources>

@@ -1,0 +1,123 @@
+{
+  "project_info": {
+    "project_number": "209021534392",
+    "firebase_url": "https://jubilee-21837.firebaseio.com",
+    "project_id": "jubilee-21837",
+    "storage_bucket": "jubilee-21837.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209021534392:android:dc97c88e2f1323f9",
+        "android_client_info": {
+          "package_name": "com.patriot.patriot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209021534392-r9qdvlcr1qrvurt3ebudcvv637tqtuif.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.patriot.patriot",
+            "certificate_hash": "b407ad4de7c7744eb7be7196b60f161cd05ef465"
+          }
+        },
+        {
+          "client_id": "209021534392-a1h69ikl3dg07mga11voq35eojvi266p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.patriot.patriot",
+            "certificate_hash": "5270eba16c966a1e38d1a2f51ba486c4d2124e6c"
+          }
+        },
+        {
+          "client_id": "209021534392-ugue3rb2jpsv8ch6gk790pvhoer2fmde.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.patriot.patriot",
+            "certificate_hash": "b5f9ae64d4bc141e7f67ee4fb1be9be310bfd7a0"
+          }
+        },
+        {
+          "client_id": "209021534392-ue7nsfkvg971dmq8ackq1aemur7qncef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvF-2b7XhFyHn2CvFp4N6DXVbmigamsjU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209021534392-ue7nsfkvg971dmq8ackq1aemur7qncef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209021534392:android:fa0dcdb12f293602",
+        "android_client_info": {
+          "package_name": "com.patriot.ur254"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209021534392-mighj59vsrj637jelpcmm924cumvumls.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.patriot.ur254",
+            "certificate_hash": "a3ab17911a6e80f0b6ef35815eaf72822189e7b7"
+          }
+        },
+        {
+          "client_id": "209021534392-4cvuhdgvn42gvb5pjvcck232mgvdprlj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.patriot.ur254",
+            "certificate_hash": "0fe5e5a8a4deb957d1d9b266f569021af14b8169"
+          }
+        },
+        {
+          "client_id": "209021534392-ue7nsfkvg971dmq8ackq1aemur7qncef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvF-2b7XhFyHn2CvFp4N6DXVbmigamsjU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209021534392-ue7nsfkvg971dmq8ackq1aemur7qncef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
