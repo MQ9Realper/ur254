@@ -1,6 +1,7 @@
 package com.patriot.ur254.utils;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -11,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.patriot.ur254.R;
+import com.patriot.ur254.activities.MainActivity;
 import com.patriot.ur254.views.Btn;
 import com.patriot.ur254.views.Txt;
 
@@ -26,10 +29,14 @@ import java.util.ArrayList;
 
 public class UniversalUtils {
     private Activity activity;
-    private AlertDialog dialogBuilder, dialogError;
+    private AlertDialog dialogBuilder, dialogError, dialogLogout;
+    private FirebaseAuth firebaseAuth;
+    private SharedPreference sharedPreference;
 
     public UniversalUtils(Activity activity) {
         this.activity = activity;
+        this.firebaseAuth = FirebaseAuth.getInstance();
+        this.sharedPreference = new SharedPreference(activity);
     }
 
     public void centerToolbarTitle(@NonNull final Toolbar toolbar) {
@@ -92,5 +99,39 @@ public class UniversalUtils {
         });
 
         dialogError.show();
+    }
+
+    public void ShowLogoutConfirmation(String message) {
+        dialogLogout = new AlertDialog.Builder(activity).create();
+        final View dialogView = LayoutInflater.from(activity).inflate(R.layout.layout_logout_confirmation, null);
+        dialogLogout.setView(dialogView);
+        dialogLogout.setCancelable(false);
+
+        Txt txtMessage = (Txt) dialogView.findViewById(R.id.textViewErrorMessage);
+        txtMessage.setText(message);
+
+        Btn btnNo = (Btn) dialogView.findViewById(R.id.buttonLogoutNo);
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (dialogLogout.isShowing()) {
+                    dialogLogout.dismiss();
+                }
+            }
+        });
+
+        Btn btnYes = (Btn) dialogView.findViewById(R.id.buttonLogoutYes);
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.signOut();
+                sharedPreference.putIsLoggedIn(false);
+                Intent intent = new Intent(activity, MainActivity.class);
+                activity.startActivity(intent);
+                activity.finish();
+            }
+        });
+
+        dialogLogout.show();
     }
 }
