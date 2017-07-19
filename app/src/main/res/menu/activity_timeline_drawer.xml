@@ -3,19 +3,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_home"
             android:icon="@drawable/ic_timeline_black_24dp"
             android:title="Timeline" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_projects"
             android:icon="@drawable/ic_play_for_work_black_24dp"
             android:title="Projects" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_recruit"
             android:icon="@drawable/ic_group_add_black_24dp"
             android:title="Recruit" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_subscriptions_black_24dp"
             android:title="Gallery" />
     </group>
@@ -26,14 +26,6 @@
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_chat_black_24dp"
                 android:title="my5 Chat" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_send_black_24dp"
-                android:title="Send SMS" />
-            <item
-                android:id="@+id/nav_invite"
-                android:icon="@drawable/ic_share_black_24dp"
-                android:title="Invite" />
         </menu>
     </item>
     <item android:title="About">
