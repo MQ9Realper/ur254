@@ -12,13 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 import com.patriot.ur254.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
-
+    private FloatingActionMenu floatingActionMenu;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -30,6 +31,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         FloatingActionButton floatingActionButtonSend = (FloatingActionButton) view.findViewById(R.id.fabSend);
+        floatingActionMenu = (FloatingActionMenu) view.findViewById(R.id.fabMenu);
         floatingActionButtonSend.setOnClickListener(this);
         return view;
     }
@@ -39,6 +41,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.fabSend:
                 sendSMS();
+                if (floatingActionMenu.isOpened()) {
+                    floatingActionMenu.close(true);
+                }
                 break;
             default:
                 break;
