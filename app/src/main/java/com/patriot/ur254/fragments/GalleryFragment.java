@@ -2,6 +2,7 @@ package com.patriot.ur254.fragments;
 
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.patriot.ur254.R;
 
@@ -46,6 +48,21 @@ public class GalleryFragment extends Fragment {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
         adapter.addFragment(new PhotosFragment(), "PHOTOS");
         adapter.addFragment(new VideosFragment(), "VIDEOS");
+
+        Typeface tf = Typeface.createFromAsset(getActivity().getAssets(), "fonts/SourceSansPro-Regular.ttf");
+        ViewGroup vg = (ViewGroup) tabLayout.getChildAt(0);
+        int tabsCount = vg.getChildCount();
+        for (int j = 0; j < tabsCount; j++) {
+            ViewGroup vgTab = (ViewGroup) vg.getChildAt(j);
+            int tabChildsCount = vgTab.getChildCount();
+            for (int i = 0; i < tabChildsCount; i++) {
+                View tabViewChild = vgTab.getChildAt(i);
+                if (tabViewChild instanceof TextView) {
+                    ((TextView) tabViewChild).setTypeface(tf);
+                }
+            }
+        }
+        
         viewPager.setAdapter(adapter);
     }
 
