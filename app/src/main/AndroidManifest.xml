@@ -29,6 +29,18 @@
             android:name=".activities.TimelineActivity"
             android:label="@string/title_activity_timeline"
             android:theme="@style/AppTheme"/>
+
+        <activity
+            android:parentActivityName=".activities.TimelineActivity"
+            android:name=".activities.AboutUsActivity"/>
+
+        <activity
+            android:parentActivityName=".activities.TimelineActivity"
+            android:name=".activities.TermsOfUseActivity"/>
+
+        <activity
+            android:parentActivityName=".activities.TimelineActivity"
+            android:name=".activities.PrivacyPolicyActivity"/>
     </application>
 
 </manifest>
