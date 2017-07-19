@@ -1,5 +1,6 @@
 package com.patriot.ur254.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -89,18 +90,18 @@ public class TimelineActivity extends AppCompatActivity implements NavigationVie
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        switch (id) {
+            case R.id.nav_privacy:
+                startActivity(new Intent(TimelineActivity.this, PrivacyPolicyActivity.class));
+                break;
+            case R.id.nav_about_us:
+                startActivity(new Intent(TimelineActivity.this, AboutUsActivity.class));
+                break;
+            case R.id.nav_terms_of_use:
+                startActivity(new Intent(TimelineActivity.this, TermsOfUseActivity.class));
+                break;
+            default:
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
