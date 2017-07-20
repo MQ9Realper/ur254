@@ -8,4 +8,5 @@
     <color name="jubileePrimaryDark">#c21729</color>
     <color name="jubileeGreen">#11793A</color>
     <color name="colorPressed">#f17b89</color>
+    <color name="transparent_black">#E6000000</color>
 </resources>

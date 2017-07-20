@@ -41,6 +41,11 @@
         <activity
             android:parentActivityName=".activities.TimelineActivity"
             android:name=".activities.PrivacyPolicyActivity"/>
+
+        <activity
+            android:name="com.patriot.ur254.activities.CustomLightboxActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/AppTheme.Translucent" />
     </application>
 
 </manifest>
