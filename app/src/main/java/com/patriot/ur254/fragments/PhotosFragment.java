@@ -44,8 +44,8 @@ public class PhotosFragment extends Fragment {
         photoList.add(new Photo("Isiolo - Moyale Road", R.drawable.jubilee_isiolo_moyale));
         photoList.add(new Photo("SGR Mombasa West Station", R.drawable.jubilee_sgr));
         photoList.add(new Photo("Resumption of Mtongwe Ferry", R.drawable.jubilee_mtongwe_ferry));
-        photoList.add(new Photo("Jubilee Offices in Mariakani", R.drawable.jubilee_offices_mariakani));
-        photoList.add(new Photo("Coast Leaders Join Jubilee", R.drawable.jubilee_coast_leaders));
+        photoList.add(new Photo("Uhuru Urging Voters To Vote", R.drawable.jubilee_uhuru_urging_voters));
+        photoList.add(new Photo("Uhuru Urging Voters To Vote", R.drawable.jubilee_uhuru_urging_voters2));
 
         RecyclerView recyclerView = (RecyclerView) viewPhotos.findViewById(R.id.listView);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
