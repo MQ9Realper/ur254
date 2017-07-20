@@ -5,5 +5,12 @@
     android:background="@android:color/white"
     tools:context="com.patriot.ur254.fragments.PhotosFragment">
 
-
+    <GridView
+        android:id="@+id/gridViewPhotos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:columnWidth="100dp"
+        android:numColumns="2"
+        android:stretchMode="columnWidth" />
 </FrameLayout>
