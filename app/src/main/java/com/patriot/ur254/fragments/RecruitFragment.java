@@ -337,7 +337,7 @@ public class RecruitFragment extends Fragment {
                 if ((position % 2) == 0) {
                     holder.commentitem_profilelayout.setBackgroundColor(Color.parseColor("#ffffff"));
                 } else {
-                    holder.commentitem_profilelayout.setBackgroundColor(Color.parseColor("#30de182f"));
+                    holder.commentitem_profilelayout.setBackgroundColor(Color.parseColor("#10de182f"));
                 }
                 holder.chkbox.setChecked(false);
             }

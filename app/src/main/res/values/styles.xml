@@ -28,8 +28,8 @@
     </style>
 
     <style name="MyCheckBox" parent="Theme.AppCompat.Light">
-        <item name="colorControlNormal">@color/colorPrimaryDark</item>
-        <item name="colorControlActivated">@color/jubileeGreen</item>
+        <item name="colorControlNormal">#40de182f</item>
+        <item name="colorControlActivated">#11793A</item>
     </style>
 
 </resources>
