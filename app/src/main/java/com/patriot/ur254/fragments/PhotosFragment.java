@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 
 import com.patriot.ur254.R;
 import com.patriot.ur254.adapters.PhotosAdapter;
-import com.patriot.ur254.adapters.VideosAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
