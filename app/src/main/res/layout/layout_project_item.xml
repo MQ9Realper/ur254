@@ -12,47 +12,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
+        <com.patriot.ur254.views.Txt
+            android:id="@+id/textView_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:padding="16dp"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageView_thumbnail"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:layout_weight="1"
             android:background="@drawable/video_player"
             android:contentDescription="@string/app_name"
             android:scaleType="centerCrop" />
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <com.patriot.ur254.views.Txt
+            android:id="@+id/textViewProjectDescription"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <com.patriot.ur254.views.Txt
-                android:id="@+id/textView_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-                android:padding="16dp"
-                android:text="@string/app_name"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <com.patriot.ur254.views.Txt
-                android:id="@+id/textViewProjectDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:padding="16dp"
-                android:text="@string/app_name"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
+            android:background="@drawable/drawable_project_description"
+            android:padding="16dp"
+            android:text="@string/app_name"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
