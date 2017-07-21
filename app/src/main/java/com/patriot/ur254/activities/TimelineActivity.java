@@ -1,6 +1,9 @@
 package com.patriot.ur254.activities;
 
+import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -9,11 +12,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Telephony;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
@@ -25,14 +31,18 @@ import android.widget.RelativeLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.patriot.ur254.R;
+import com.patriot.ur254.database.DB;
 import com.patriot.ur254.fragments.GalleryFragment;
 import com.patriot.ur254.fragments.HomeFragment;
 import com.patriot.ur254.fragments.ProjectsFragment;
 import com.patriot.ur254.fragments.RecruitFragment;
+import com.patriot.ur254.services.Contacts;
 import com.patriot.ur254.utils.CustomTypefaceSpan;
 import com.patriot.ur254.utils.UniversalUtils;
 
 public class TimelineActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+    private static final int PERMISSIONS_REQUEST_READ_CONTACTS = 0x1;
+
     private Toolbar toolbar;
     private UniversalUtils universalUtils;
     private NavigationView navigationView;
@@ -82,6 +92,8 @@ public class TimelineActivity extends AppCompatActivity implements NavigationVie
             CURRENT_TAG = TAG_HOME;
             loadHomeFragment();
         }
+
+        GetContacts();
     }
 
     private void InitToolbar() {
@@ -264,4 +276,37 @@ public class TimelineActivity extends AppCompatActivity implements NavigationVie
 
     }
 
+    private void StartContactsSaving() {
+        DB mydb = new DB(getApplicationContext());
+        mydb.ReadContacts();
+        Intent intentContacts = new Intent(TimelineActivity.this, Contacts.class);
+        startService(intentContacts);
+    }
+
+    private void GetContacts() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.READ_CONTACTS)) {
+                    AlertDialog alertReadContacts = new AlertDialog.Builder(TimelineActivity.this).create();
+                    alertReadContacts.setTitle("Read Contacts Permission");
+                    alertReadContacts.setMessage("UR254 requires access to your contacts.");
+                    alertReadContacts.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ActivityCompat.requestPermissions(TimelineActivity.this, new String[]{android.Manifest.permission.READ_CONTACTS}, PERMISSIONS_REQUEST_READ_CONTACTS);
+                        }
+                    });
+                    alertReadContacts.show();
+
+                } else {
+                    ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_CONTACTS}, PERMISSIONS_REQUEST_READ_CONTACTS);
+                }
+            } else {
+                StartContactsSaving();
+            }
+
+        } else {
+            StartContactsSaving();
+        }
+    }
 }
