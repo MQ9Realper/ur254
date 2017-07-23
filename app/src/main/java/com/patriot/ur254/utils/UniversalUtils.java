@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.patriot.ur254.R;
 import com.patriot.ur254.activities.MainActivity;
+import com.patriot.ur254.activities.SplashActivity;
 import com.patriot.ur254.views.Btn;
 import com.patriot.ur254.views.Txt;
 
@@ -126,7 +127,7 @@ public class UniversalUtils {
             public void onClick(View v) {
                 firebaseAuth.signOut();
                 sharedPreference.putIsLoggedIn(false);
-                Intent intent = new Intent(activity, MainActivity.class);
+                Intent intent = new Intent(activity, SplashActivity.class);
                 activity.startActivity(intent);
                 activity.finish();
             }
