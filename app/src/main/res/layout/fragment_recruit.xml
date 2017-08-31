@@ -17,26 +17,45 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Select Contact (s)"
-            android:textStyle="bold"
             android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:background="@drawable/drawable_round_textbox"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.patriot.ur254.views.Txt
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="0"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </RelativeLayout>
 
     <ListView
         android:id="@+id/listViewContacts"
-        android:layout_above="@+id/layoutSendInvitations"
-        android:layout_below="@+id/layoutContactsHeading"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutSendInvitations"
+        android:layout_below="@+id/layoutContactsHeading" />
 
     <RelativeLayout
         android:id="@+id/layoutSendInvitations"
-        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/drawable_buttons_background">
+        android:background="@drawable/drawable_buttons_background"
+        android:clickable="true">
 
         <com.patriot.ur254.views.Txt
             android:layout_width="wrap_content"
